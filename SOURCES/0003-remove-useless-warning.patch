@@ -1,0 +1,11 @@
+--- r8152.c.orig	2024-11-13 04:54:34.560324560 +0000
++++ r8152.c	2024-11-13 04:56:01.661895630 +0000
+@@ -1198,7 +1198,7 @@
+ 
+ 	/* both size and indix must be 4 bytes align */
+ 	if ((size & 3) || !size || (index & 3) || !data) {
+-		WARN_ON_ONCE(1);
++/*		WARN_ON_ONCE(1); */ /* Dire kernel warning is unwarranted */
+ 		return -EPERM;
+ 	}
+ 

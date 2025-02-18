@@ -1,0 +1,12 @@
+--- r8152.c.orig	2024-11-13 20:34:39.366113609 +0000
++++ r8152.c	2024-11-13 20:41:05.621152316 +0000
+@@ -26918,6 +26918,9 @@
+ 				NETIF_F_IPV6_CSUM | NETIF_F_TSO6;
+ #endif /* LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,39) */
+ 
++	/* Turn off TX CSUM and TSO by default for XCP */
++	netdev->features &= ~(NETIF_F_IP_CSUM|NETIF_F_TSO|NETIF_F_IPV6_CSUM|NETIF_F_TSO6);
++
+ 	if (tp->version == RTL_VER_01) {
+ 		netdev->features &= ~NETIF_F_RXCSUM;
+ #if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,39)
