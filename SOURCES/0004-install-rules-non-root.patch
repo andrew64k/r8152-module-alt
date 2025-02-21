@@ -1,0 +1,11 @@
+--- r8152-module-alt-2.19.2/Makefile.orig	2025-02-21 12:02:48.544001316 +0100
++++ r8152-module-alt-2.19.2/Makefile	2025-02-21 12:03:19.568449504 +0100
+@@ -54,7 +54,7 @@
+ 
+ .PHONY: install_rules
+ install_rules:
+-	install --group=root --owner=root --mode=0644 $(RULEFILE) $(RULEDIR)
++	install --mode=0644 $(RULEFILE) $(RULEDIR)
+ 
+ endif
+ 

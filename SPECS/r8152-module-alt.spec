@@ -11,6 +11,7 @@ Source: %{name}-%{version}.tar.gz
 Patch0: 0001-compat.patch
 Patch1: 0002-disable-tx-checksum.patch
 Patch2: 0003-remove-useless-warning.patch
+Patch3: 0004-install-rules-non-root.patch
 
 BuildRequires: gcc
 BuildRequires: kernel-devel
